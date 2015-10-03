@@ -23,9 +23,10 @@
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
 		p:location="/WEB-INF/jdbc.properties" />
 
-	<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource"
-		destroy-method="close" p:driverClassName="${jdbc.driverClassName}"
-		p:url="${jdbc.databaseurl}" p:username="${jdbc.username}" p:password="${jdbc.password}" />
+<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		 p:driverClassName="${database.driver}"
+		p:url="${database.url}" p:username="${database.user}" p:password="${database.password}" />
 
 
 	<bean id="sessionFactory"
@@ -39,7 +40,7 @@
 		</property> -->
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">${jdbc.dialect}</prop>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hbm2ddl.auto">create</prop>
 				

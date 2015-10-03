@@ -7,9 +7,7 @@
     
 	<servlet>
 		<servlet-name>spring</servlet-name>
-		<servlet-class>
-                       org.springframework.web.servlet.DispatcherServlet
-                </servlet-class>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>spring</servlet-name>
@@ -17,49 +15,10 @@
 	</servlet-mapping>
 	
 
-	<servlet>
-		<servlet-name>jersey-rest-service</servlet-name>
-		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-		<init-param>
-	    	<param-name>jersey.config.server.provider.packages</param-name>
-    		<param-value>com.mit.mini, org.codehaus.jackson.jaxrs</param-value>
-    	</init-param>
-    	<init-param>
-			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
-			<param-value>true</param-value>
-		</init-param>
-    	  <!-- <init-param>
-            <param-name>javax.ws.rs.Application</param-name>
-            <param-value>com.health.rest.HealthRestApp</param-value>            
-        </init-param> -->
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>jersey-rest-service</servlet-name>
-		<url-pattern>/api/*</url-pattern>
-	</servlet-mapping>
-	
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring-servlet.xml</param-value>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
 	</context-param>
- <servlet-mapping>
-		<servlet-name>default</servlet-name>
-		<url-pattern>*.css</url-pattern>
-		<url-pattern>*.js</url-pattern>
-		<url-pattern>*.png</url-pattern>
-		<url-pattern>*.jpg</url-pattern>
-		<url-pattern>*.gif</url-pattern>
-		<url-pattern>*.ico</url-pattern>
-	</servlet-mapping>
-	<session-config>
-		<session-timeout>1</session-timeout>
-	</session-config>
-	<listener>
-		<listener-class>
-                      org.springframework.web.context.ContextLoaderListener
-                </listener-class>
-	</listener>
-	
-	
+ 
 </web-app>

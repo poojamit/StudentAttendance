@@ -46,6 +46,7 @@
 			<artifactId>jersey-media-json-processing</artifactId>
 			<version>${org.jersey-version}</version>
 		</dependency>
+<!-- ORACLE database driver -->
 
 
 
